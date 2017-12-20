@@ -19,6 +19,8 @@
 import fs from "fs";
 import path from "path";
 import {app, ipcMain, BrowserWindow} from "electron";
+import jre from "node-jre";
+
 import {JREInstallEvent, SiaWalletEvent, StorjLoginEvent, StorjRegisterationEvent} from "../constants";
 
 if (!process.env.DEFAULT_SYNC_FOLDER) {
@@ -47,7 +49,11 @@ app.on("ready", () => {
   });
 
   ipcMain.on(JREInstallEvent, (event) => {
-    event.sender.send(JREInstallEvent);
+    console.log(jre.driver());
+    jre.install(err => {
+      console.log(err);
+      event.sender.send(JREInstallEvent);
+    });
   });
 
   ipcMain.on(StorjLoginEvent, (event, arg) => {

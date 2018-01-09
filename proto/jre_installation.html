@@ -1,0 +1,98 @@
+<html>
+
+<head>
+  <link href="./main.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
+  <style>
+
+    .background {
+      background: linear-gradient(to right, #00AFB1, #7A55DE);
+      position: absolute;
+      width: 760px;
+      height: 760px;
+      left: -80px;
+      top: -180px;
+      animation: spin 2s linear infinite;
+    }
+
+    main {
+      background-color: white;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 580px;
+      height: 380px;
+      text-align: center;
+      padding: 100px 100px;
+    }
+
+    main > * {
+      margin-bottom: 50px;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .meter {
+      display: block;
+      border: #F7F7F7 1px solid;
+      clear: both;
+      width: auto;
+      height: 12px;
+      margin-top: 20px;
+      border-radius: 50px;
+    }
+
+    .meter > span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(to right, #7A55DE, #00AFB1);
+      border-radius: 50px;
+    }
+
+    p {
+      color: rgb(0, 175, 177);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .iconBackground {
+      position: absolute;
+      animation: spin 2s linear infinite;
+    }
+
+    .icon {
+      position: relative;
+      top: 10px;
+      left: 10px;
+    }
+
+  </style>
+</head>
+<body>
+<div id="app">
+  <div class="background">
+  </div>
+  <main>
+    <div>
+      <img class="iconBackground" src="assets/stroke_color.svg" width="60px" height="60px"/>
+      <img class="icon" src="assets/symbol_color.svg" width="40px" height="40px"/>
+    </div>
+    <div class="meter">
+      <span style="width: 50%"></span>
+    </div>
+    <p>
+      Getting some tools.<br/>
+      <span class="bold">Please wait.</span>
+    </p>
+  </main>
+</div>
+</body>
+
+</html>
